@@ -32,10 +32,10 @@ npxコマンドでNuxt.jsプロジェクト「todo_app」を作成し、次の�
 
 配布のtodo_api.jarを実行し、以下の仕様に従ってHTTP通信をしてください。
 
-| URL | メソッド | 内容 |
-|:--|:-:|:--|
-| http://localhost:8080/tasks | GET | すべてのタスクデータを返却する。 |
-| http://localhost:8080/tasks/{id} | GET | パスパラメータに指定したIDのタスクデータを返却する。 |
-| http://localhost:8080/tasks | POST | リクエスト送信時に渡す登録情報を元にタスクを登録する。登録後、すべてのタスクデータを返却する。 |
-| http://localhost:8080/tasks/{id} | PATCH | パスパラメータに指定したIDのタスクデータを完了または未完了に更新する。更新後、すべてのタスクデータを返却する。 |
-| http://localhost:8080/tasks/{id} | DELETE | パスパラメータに指定したIDのタスクデータを物理削除する。削除後、すべてのタスクデータを返却する。 |
+| URL | ﾒｿｯﾄﾞ | ﾘｸｴｽﾄ<br>ﾊﾟﾗﾒｰﾀ | 内容 |
+|:--|:-:|:-:|:--|
+| http://localhost:8080/tasks | GET |  | すべてのタスクデータを返却する。 |
+| http://localhost:8080/tasks/{id} | GET | なし | パスパラメータに指定したIDのタスクデータを返却する。 |
+| http://localhost:8080/tasks | POST | なし | リクエスト送信時に渡す登録情報を元にタスクを登録する。登録後、すべてのタスクデータを返却する。 |
+| http://localhost:8080/tasks/{id} | PATCH | task<br>detail | パスパラメータに指定したIDのタスクデータを完了または未完了に更新する。更新後、すべてのタスクデータを返却する。 |
+| http://localhost:8080/tasks/{id} | DELETE | なし | パスパラメータに指定したIDのタスクデータを物理削除する。削除後、すべてのタスクデータを返却する。 |
