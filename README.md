@@ -1,20 +1,41 @@
-# todo_app
+# Nuxt.js演習 - TODOアプリケーション開発 -
 
-## Build Setup
+## 1 はじめに
 
-```bash
-# install dependencies
-$ npm install
+npxコマンドでNuxt.jsプロジェクト「todo_app」を作成し、次の仕様に従いTODOアプリケーションを構築してください。
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- タスク一覧表示機能（サンプルコードあり）
+- タスク詳細表示機能（サンプルコードあり）
+- タスク登録機能
+- タスク更新機能
+- タスク削除機能
+- フッター表示
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+<br>
 
-# generate static project
-$ npm run generate
-```
+### 1.1 テーブル定義
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+**タスクテーブル（TASK）**
+
+|  | 論理名 | 物理名 | データ型 | PK | UK | Not Null | デフォルト |
+|:-:|:--|:--|:--|:-:|:-:|:-:|:--|
+| 1 | ID | ID | INT(11) | ● |  |  | 自動採番 |
+| 2 | タスク | TASK | VARCHAR(30) |  |  | ● |  |
+| 3 | 詳細 | DETAIL | VARCHAR(100) |  |  |  |  |
+| 4 | 完了フラグ | DONE | TINYINT(1) |  |  | ● | 0:未完了 |
+| 5 | 登録日時 | CREATED_AT | TIMESTAMP |  |  | ● | 現在日時 |
+| 6 | 更新日時 | UPDATED_AT | TIMESTAMP |  |  |  | 現在日時 |
+
+<br>
+
+### 1.2 API定義
+
+配布のtodo_api.jarを実行し、以下の仕様に従ってHTTP通信をしてください。
+
+| URL | メソッド | 内容 |
+|:--|:-:|:--|
+| http://localhost:8080/tasks | GET | すべてのタスクデータを返却する。 |
+| http://localhost:8080/tasks/{id} | GET | パスパラメータに指定したIDのタスクデータを返却する。 |
+| http://localhost:8080/tasks | POST | リクエスト送信時に渡す登録情報を元にタスクを登録する。登録後、すべてのタスクデータを返却する。 |
+| http://localhost:8080/tasks/{id} | PATCH | パスパラメータに指定したIDのタスクデータを完了または未完了に更新する。更新後、すべてのタスクデータを返却する。 |
+| http://localhost:8080/tasks/{id} | DELETE | パスパラメータに指定したIDのタスクデータを物理削除する。削除後、すべてのタスクデータを返却する。 |

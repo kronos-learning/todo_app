@@ -1,17 +1,22 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  mode: 'universal',
   head: {
-    title: 'todo_app',
+    title: 'TODOアプリ',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'タスク管理をするためのTODOアプリケーションです。' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        // Bootstrap4を使う場合の設定
+        rel: 'stylesheet',
+        href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+      }
     ]
   },
 
